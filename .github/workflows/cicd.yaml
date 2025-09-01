@@ -82,5 +82,10 @@ jobs:
       - name: 'Deploying argocd ingress rule to EKS'
         run: kubectl apply -f ingress-argocd.yaml -n argocd
 
+      - name: Get ArgoCD Password
+        run: |
+    echo "Username: admin"
+    echo "Password: $(kubectl get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d)"
+
 #- name: Terraform Destroy
        # run: terraform destroy -auto-approve 
