@@ -3,13 +3,13 @@ name: Deploy to AWS with Terraform
 on:
   push:
     branches:
-      - feature/man-dns
+      - main
 permissions:
     contents: write
     id-token: write
 jobs:
   deploy-iac:
-    runs-on: ubuntu-latest
+    runs-on: Terraform
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -82,5 +82,5 @@ jobs:
       # - name: 'Deploying argocd ingress rule to EKS'
       #   run: kubectl apply -f ingress-argocd.yaml -n argocd
 
-      - name: Terraform Destroy
-        run: terraform destroy -auto-approve 
+#- name: Terraform Destroy
+       # run: terraform destroy -auto-approve 
