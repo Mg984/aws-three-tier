@@ -46,4 +46,4 @@ terraform-eks-db/
 ```
 
 ## This is the architecture for the infrastruture deployment
-![Project Architecture](architecture.png)ghhghghgg
+![Project Architecture](architecture.png)ghhghghggggg
