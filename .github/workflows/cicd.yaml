@@ -82,12 +82,21 @@ jobs:
       - name: 'Deploying argocd ingress rule to EKS'
         run: kubectl apply -f ingress-argocd.yaml -n argocd
 
-    name: Quick Password Retrieval
-    on: workflow_dispatch
+    name: Your Workflow Name
+    on: 
+     push:
+  # or whatever trigger you're using
+
     jobs:
-  get-password:
-    runs-on: Terraform
-    steps:
-    - run: kubectl get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d && echo
+      your-job-name:
+        runs-on: Terraform
+        steps:
+        - name: Your existing steps
+          run: echo "existing step"
+      
+        - name: Get ArgoCD Password
+          run: |
+            echo "Username: admin"
+            echo "Password: $(kubectl get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d)"
 #- name: Terraform Destroy
        # run: terraform destroy -auto-approve 
