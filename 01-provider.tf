@@ -5,13 +5,14 @@
 
 terraform {
   required_providers {
-    godaddy-dns = {
-      source = "veksh/godaddy-dns"
-      version = "0.3.12"
-    }
     aws = {
       source = "hashicorp/aws"
-      version = "6.0.0-beta2"
+      version = "~> 5.0"
+    }
+
+    kubernetes = {
+      source = "hashicorp/aws"
+      version = "~> 2.20"  
     }
     helm = {
       source  = "hashicorp/helm"
