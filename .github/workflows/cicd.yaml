@@ -86,5 +86,5 @@ jobs:
         run: |
           echo "Username: admin"
           echo "Password: $(kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 -d)"
-#- name: Terraform Destroy
-       # run: terraform destroy -auto-approve 
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve 
