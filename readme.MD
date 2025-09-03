@@ -10,15 +10,9 @@ This repository contains the infrastructure-as-code (IaC) setup using **Terrafor
 ### step (1) first after deploying this infrastructure to aws everything will be created.
 ### step (2) AWS Route 53 hosted zone will be created. However, due to issue with bannd in namecheap and godaddy, that you must have 50 domains before you use their API. that is why i have updated this so you can do that part mannually. 
 ### step (3) Check AWS route53 hosted zone nameservers. and copy them to namecheap or godaddy and update it.
-
-### check this video for namecheap
-### check this video for godaddy.
-
 ### step (4) After updating the nameserver in the selected alterneting domain provider, you wait for 10 minutes, then 
 ### step (5) uncomment the .github/workflow/cicd.yaml line [70-83] and push it back to run the pipeline again by this time. the domain have been populated and certmanager and nginx will be able to make use of it. 
 
-### If you still have issue on this, let me know by sending a screenshot of all the steps.
-## Good luck on your project, I love you all.
 
 
 
@@ -46,4 +40,4 @@ terraform-eks-db/
 ```
 
 ## This is the architecture for the infrastruture deployment
-![Project Architecture](architecture.png)ghhghghggggg
+![Project Architecture](architecture.png)
