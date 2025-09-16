@@ -82,6 +82,16 @@ jobs:
       - name: 'Deploying argocd ingress rule to EKS'
         run: kubectl apply -f ingress-argocd.yaml -n argocd
 
+      - name: 'Export kubeconfig'
+        run: |
+         kubectl config view --raw > kubeconfig.yaml
+    
+      - name: 'Upload kubeconfig as artifact'
+        uses: actions/upload-artifact@v3
+        with:
+         name: kubeconfig
+         path: kubeconfig.yaml
+
      # - name: 'Get ArgoCD Password'
      #   run: |
      #     echo "Username: admin"
