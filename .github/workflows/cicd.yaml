@@ -61,8 +61,8 @@ jobs:
       - name: Terraform Plan
         run: terraform plan 
 
-      #- name: Terraform Apply.
-#run: terraform apply -auto-approve 
+      - name: Terraform Apply.
+        run: terraform apply -auto-approve 
 
 
         ## Note this part depends on the mannaul Dns route 53 to namecheap or godaddy setup.
